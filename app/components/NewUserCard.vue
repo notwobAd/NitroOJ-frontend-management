@@ -39,9 +39,12 @@ const fetchData = async () => {
 
     data.value = "+" + totalThisMonth.total.toString();
     delta.value = totalThisMonth.total - totalLastMonth.total;
-    rate.value =
-      ((totalThisMonth.total - totalLastMonth.total) / totalLastMonth.total) *
-      100;
+    if (totalLastMonth.total === 0) rate.value = 100;
+    else {
+      rate.value =
+        ((totalThisMonth.total - totalLastMonth.total) / totalLastMonth.total) *
+        100;
+    }
   } catch (error) {
     console.log(error);
     isError.value = true;
