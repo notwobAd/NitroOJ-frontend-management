@@ -13,7 +13,6 @@ const description = computed(
     (delta.value >= 0 ? "增加" : "减少" + Math.abs(delta.value) + "次提交"),
 );
 const rate = ref(0);
-const absRate = computed(() => Math.abs(rate.value).toFixed(1));
 
 const startDate = dayjs().startOf("month").format("YYYY-MM-DD");
 const endDate = dayjs().endOf("month").format("YYYY-MM-DD");
@@ -72,7 +71,7 @@ fetchData();
       <Badge variant="outline">
         <TrendingUp v-if="rate >= 0"></TrendingUp>
         <TrendingDown v-else></TrendingDown>
-        {{ absRate }}%
+        {{ Math.abs(rate).toFixed(1) }}%
       </Badge>
     </template>
 

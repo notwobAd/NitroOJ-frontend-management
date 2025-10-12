@@ -67,7 +67,7 @@ fetchData();
       <Badge variant="outline">
         <TrendingUp v-if="rate >= 0"></TrendingUp>
         <TrendingDown v-else></TrendingDown>
-        {{ rate >= 0 ? rate.toFixed(1) : Math.abs(rate).toFixed(1) }}%
+        {{ Math.abs(rate).toFixed(1) }}%
       </Badge>
     </template>
 
