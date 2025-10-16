@@ -55,10 +55,10 @@ const list = ref<GroupItem[]>([
             <SidebarMenu>
               <SidebarMenuItem v-for="naviItem in groupItem.items">
                 <SidebarMenuButton as-child>
-                  <a :href="naviItem.url">
+                  <NuxtLink :href="naviItem.url">
                     <component :is="naviItem.icon" />
                     <span>{{ naviItem.title }}</span>
-                  </a>
+                  </NuxtLink>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
